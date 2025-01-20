@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { RedirectionComponent } from './redirection/redirection.component';
+import { InformationsComponent } from './informations/informations.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     HomeComponent,
-    RedirectionComponent
+    RedirectionComponent,
+    InformationsComponent
   ],
   imports: [
     BrowserModule,

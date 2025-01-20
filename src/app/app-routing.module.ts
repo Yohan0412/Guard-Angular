@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './core/auth.guard';
 import { RedirectionComponent } from './redirection/redirection.component';
-
+import { InformationsComponent } from './informations/informations.component';
 
   const routes: Routes = [
 
@@ -13,6 +13,7 @@ import { RedirectionComponent } from './redirection/redirection.component';
   //  {path:'admin', component: AdminComponent},
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   {path: 'redirection', component: RedirectionComponent},
+  {path: 'informations', component: InformationsComponent},
 ];
 
 @NgModule({

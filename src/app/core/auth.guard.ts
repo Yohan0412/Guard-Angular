@@ -1,7 +1,8 @@
 import { Injectable } from  '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree} from  '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, GuardResult, MaybeAsync, CanActivateChild} from  '@angular/router';
 import { Observable, of } from  'rxjs';
 import { Router , Route } from '@angular/router';
+import { UserService } from '../user.service';
 
 
 @Injectable({
@@ -10,20 +11,27 @@ import { Router , Route } from '@angular/router';
 
 export class AuthGuard implements CanActivate {
   
-  constructor(
-    private router: Router
-) {}
- 
+  
+  
+  constructor(private Userservice: UserService) {}
+  
+
+
  canActivate(  
- 
-   next:  ActivatedRouteSnapshot,
-   state:  RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+
+  
+   _next:  ActivatedRouteSnapshot,
+   _state:  RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
    
     console.log('navigationdetected');
-    this.router.navigate(['/redirection']);
-     return  false;
+    return this.Userservice.login();
+    //  return false;
      
    }
 
   
+
+  
 }
+
+
